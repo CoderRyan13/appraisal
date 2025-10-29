@@ -7,6 +7,7 @@
     <title>Appraisal History</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -105,7 +106,7 @@
         <div>
             <form action="{{ url('/logout') }}" method="post" role="form">
                 @csrf
-                <button class="btn btn-danger">Log out</button>
+                <button class="btn btn-danger"><i class="ri-logout-box-line me-2"></i>Log out</button>
             </form>
         </div>
     </div>
@@ -203,7 +204,7 @@
                                 <td class="text-start">${val.employee}</td> 
                                 <td class="text-start">${val.employment_date}</td> 
                                 <td class="text-start">${val.supervisor}</td> 
-                                <td class="text-start"><button class='btn btn-success view-btn' id='${val.id}'>View</button> <button class='ms-2 btn btn-warning edit-btn' id='${val.id}'>Edit</button></td> 
+                                <td class="text-start"><button class='btn btn-success view-btn' id='${val.id}'><i class="ri-eye-fill me-2"></i>View</button> <button class='ms-2 btn btn-warning edit-btn' id='${val.id}'><i class="ri-edit-line me-2"></i>Edit</button></td> 
                             </tr> 
                         `; 
                     });
@@ -727,7 +728,7 @@
                             <div class="fw-bold fs-4 text-center">Average Rating: ${rating} ( ${wordRating} )</div>
                         </div>
                         <div class="text-end mt-3">
-                            <button type="button" class="btn btn-primary print-app">Print</button>
+                            <button type="button" class="btn btn-primary print-app"><i class="ri-printer-line me-2"></i>Print</button>
                             <button type="button" class="btn btn-success me-2" data-bs-dismiss="modal">Done</button>
                         </div>
                     `);
@@ -1278,8 +1279,8 @@
                             <div class="fw-bold fs-4 text-center">Average Rating: ${rating} ( ${wordRating} )</div>
                         </div>
                         <div class="text-end mt-3">
-                            <button type="button" class="btn btn-success edit-app" id="${id}">Update</button>
-                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Done</button>
+                            <button type="button" class="btn btn-primary edit-app" id="${id}"><i class="ri-edit-fill me-2"></i>Update</button>
+                            <button type="button" class="btn btn-success me-2" data-bs-dismiss="modal">Done</button>
                         </div>
                     `);
                     $('.edit-app').prop({appType: appType});

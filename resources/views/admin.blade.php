@@ -7,6 +7,7 @@
     <title>Appraisal Admin</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -44,10 +45,10 @@
     <div class="d-flex justify-content-between align-items-center">
         <div class='fw-bold fs-3'><img src="{{url('/')}}/westrac_icon.png" alt="westrac" style="width: 40px;"> Westrac Appraisal Admin</div>
         <div class="d-flex justify-content-center align-items-center">
-            <a href="{{url('/')}}/appraisal/history" target="_blank"><button class="btn btn-primary me-2">History</button></a>
+            <a href="{{url('/')}}/appraisal/history" target="_blank"><button class="btn btn-primary me-2"><i class="ri-history-line me-2"></i>History</button></a>
             <form action="{{ url('/logout') }}" method="post" role="form">
                 @csrf
-                <button class="btn btn-warning">Log out</button>
+                <button class="btn btn-danger"><i class="ri-logout-box-line me-2"></i>Log out</button>
             </form>
         </div>
     </div>
@@ -124,7 +125,7 @@
                                 <td class="text-start">${val.employee}</td> 
                                 <td class="text-start">${val.supervisor}</td> 
                                 <td class="text-start">${val.department}</td> 
-                                <td class="text-start"><button class='btn btn-success send-app' id='${val.id}'>Send Appraisal</button></td> 
+                                <td class="text-start"><button class='btn btn-success send-app' id='${val.id}'><i class="ri-send-plane-fill me-2"></i>Send Appraisal</button></td> 
                             </tr> 
                         `;                    });
 

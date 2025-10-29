@@ -218,23 +218,6 @@
 				},
 				async		: false
 			});
-
-            // Check inputs on page load
-            checkInputs();
-        })
-        .on('change', '.myform .input', function(e) {
-            checkInputs();
-            
-            // allows the stars to display based on input and also updates on change
-            for(let i = 1; i <= 30; i++) {
-            // $(`.val${i}`).html(`<img src="{{ url('/') }}/ratings_images/star-${$(`.slider${i}`).val()}.png" class="star">`);
-            $(`.val${i}`).html(`${$(`.slider${i}`).val()}`);
-
-                $(`.slider${i}`).on("change", function() {
-                    // $(`.val${i}`).html(`<img src="{{ url('/') }}/ratings_images/star-${$(`.slider${i}`).val()}.png" class="star">`);
-                    $(`.val${i}`).html(`${$(`.slider${i}`).val()}`);
-                }) 
-            }
         })
         .on('click', '.view-btn', function(e) {
             let id = this.id;
@@ -1300,13 +1283,34 @@
                         </div>
                     `);
                     $('.edit-app').prop({appType: appType});
+                    checkInputs();
 
+                    // allows the stars to display based on input and also updates on change
+                    for(let i = 1; i <= 30; i++) {
+                        $(`.val${i}`).html(`<img src="{{ url('/') }}/ratings_images/star-${$(`.slider${i}`).val()}.png" class="star">`);
+
+                        $(`.slider${i}`).on("change", function() {
+                            $(`.val${i}`).html(`<img src="{{ url('/') }}/ratings_images/star-${$(`.slider${i}`).val()}.png" class="star">`);
+                        }) 
+                    }
 				},
 				error		: function (request, status, error) {
 					console.log (request.status, request.responseText);
 				},
 				async		: false
 			});
+        })
+        .on('change', '.myform input', function() {
+            checkInputs();
+
+            // allows the stars to display based on input and also updates on change
+            for(let i = 1; i <= 30; i++) {
+                $(`.val${i}`).html(`<img src="{{ url('/') }}/ratings_images/star-${$(`.slider${i}`).val()}.png" class="star">`);
+
+                $(`.slider${i}`).on("change", function() {
+                    $(`.val${i}`).html(`<img src="{{ url('/') }}/ratings_images/star-${$(`.slider${i}`).val()}.png" class="star">`);
+                }) 
+            }
         })
         .on('click', '.print-app', function(e) {
             var modalContent = $('.modal-body').html(); // get modal content

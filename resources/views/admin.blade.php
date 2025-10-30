@@ -165,10 +165,18 @@
                     let sup_email = data[0].supervisor_email;
                     let period = '1 year';
 
-                    const inputYear = new Date(data[0].employment_date).getFullYear();; // Example date
-                    const currentYear = new Date().getFullYear(); // Get current year
+                    const inputDate = new Date(data[0].employment_date);
+                    const currentDate = new Date();
 
-                    if(inputYear === currentYear) { period = 'Probation'; }
+                    // Calculate the 3- and 4-month marks
+                    const threeMonthsLater = new Date(inputDate);
+                    threeMonthsLater.setMonth(inputDate.getMonth() + 3);
+
+                    const fourMonthsLater = new Date(inputDate);
+                    fourMonthsLater.setMonth(inputDate.getMonth() + 4);
+
+                    // Check if current date is >= 3 months but < 4 months
+                    if (currentDate >= threeMonthsLater && currentDate < fourMonthsLater) { period = 'Probation'; }
 
                     link += `?employee=${emp}&employeeNumber=${data[0].employee_number}&period=${period}&supervisor=${sup}&employmentDate=${data[0].employment_date}&jobTitle=${data[0].job_title}`;
 

@@ -163,8 +163,14 @@
                     let emp = data[0].employee;
                     let sup = data[0].supervisor;
                     let sup_email = data[0].supervisor_email;
+                    let period = '1 year';
 
-                    link += `?employee=${emp}&employeeNumber=${data[0].employee_number}&supervisor=${sup}&employmentDate=${data[0].employment_date}&jobTitle=${data[0].job_title}`;
+                    const inputYear = new Date(data[0].employment_date).getFullYear();; // Example date
+                    const currentYear = new Date().getFullYear(); // Get current year
+
+                    if(inputYear === currentYear) { period = 'Probation'; }
+
+                    link += `?employee=${emp}&employeeNumber=${data[0].employee_number}&period=${period}&supervisor=${sup}&employmentDate=${data[0].employment_date}&jobTitle=${data[0].job_title}`;
 
                     link = encodeURI(link);
 

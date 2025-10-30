@@ -114,7 +114,7 @@
             </tr>
             <tr>
                 <th>Period of Evaluation: </th>
-                <td><select class="evaluation-period input"><option>1 year</option><option>Probation</option></select></td>
+                <td><input type="text" class="evaluation-period input" readonly></td>
                 <th>Date: </th>
                 <td><input type="date" class="appraisal-date input" value="<?php echo date('Y-m-d') ?>"></td>
             </tr>
@@ -626,25 +626,17 @@
             const params = getUrlParams();
 
             // Check and fill fields by class name
-            if (params.employee) {
-                $('.employee').val(params.employee);
-            }
+            if (params.employee) { $('.employee').val(params.employee); }
 
-            if (params.employeeNumber) {
-                $('.employee-number').val(params.employeeNumber);
-            }
+            if (params.employeeNumber) { $('.employee-number').val(params.employeeNumber); }
 
-            if (params.supervisor) {
-                $('.supervisor').val(params.supervisor);
-            }
+            if (params.period) { $('.evaluation-period').val(params.period); }
 
-            if (params.employmentDate) {
-                $('.employment-date').val(params.employmentDate);
-            }
+            if (params.supervisor) { $('.supervisor').val(params.supervisor); }
 
-            if (params.jobTitle) {
-                $('.job-title').val(params.jobTitle);
-            }
+            if (params.employmentDate) { $('.employment-date').val(params.employmentDate); }
+
+            if (params.jobTitle) { $('.job-title').val(params.jobTitle); }
 
         })
         .on('change', '.myform .input', function(e) {

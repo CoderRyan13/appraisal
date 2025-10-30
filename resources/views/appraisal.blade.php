@@ -115,7 +115,7 @@
             <tr>
                 <th>Period of Evaluation: </th>
                 <!-- <td><select class="evaluation-period input"><option>1 year</option></select></td> -->
-                <td><input type="text" class="evaluation-period input" value="1 year" disabled></td>
+                <td><input type="text" class="evaluation-period input" value="1 year" readonly></td>
                 <th>Date: </th>
                 <td><input type="date" class="appraisal-date input" value="<?php echo date('Y-m-d') ?>"></td>
             </tr>

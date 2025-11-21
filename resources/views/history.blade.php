@@ -853,7 +853,7 @@
                                                 <td class="col-xs-8"><b>Attendance:</b><br><br>Consider the number of absences and requests for personal time off.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].attendance_rating_1}" step="0.5" class="slider1">
+                                                        <input type="range" min="1" max="5" value="${data[0].attendance_rating_1}" step="0.5" class="slider1" disabled>
                                                         <div class="val1"></div>
                                                     </div>
                                                 </td>
@@ -871,7 +871,7 @@
                                                 <td class="col-xs-8"><b>Punctuality:</b><br><br>Consider the arrival time and departure time lunch periods and breaks.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].punctuality_rating_1}" step="0.5" class="slider2">
+                                                        <input type="range" min="1" max="5" value="${data[0].punctuality_rating_1}" step="0.5" class="slider2" disabled>
                                                         <div class="val2"></div>
                                                     </div>
                                                 </td>
@@ -880,7 +880,7 @@
                                                 <td>Consider if employee begins to work promptly upon arrival.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].punctuality_rating_2}" step="0.5" class="slider3">
+                                                        <input type="range" min="1" max="5" value="${data[0].punctuality_rating_2}" step="0.5" class="slider3" disabled>
                                                         <div class="val3"></div>
                                                     </div>
                                                 </td>
@@ -899,7 +899,7 @@
                                                 Does the employee complete work quickly and efficiently?</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].productivity_rating_1}" step="0.5" class="slider4">
+                                                        <input type="range" min="1" max="5" value="${data[0].productivity_rating_1}" step="0.5" class="slider4" disabled>
                                                         <div class="val4"></div>
                                                     </div>
                                                 </td>
@@ -908,7 +908,7 @@
                                                 <td>Does the employee act without prompting to get assigned work done?</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].productivity_rating_2}" step="0.5" class="slider5">
+                                                        <input type="range" min="1" max="5" value="${data[0].productivity_rating_2}" step="0.5" class="slider5" disabled>
                                                         <div class="val5"></div>
                                                     </div>
                                                 </td>
@@ -917,7 +917,7 @@
                                                 <td>Does the employee look for "work" when assigned tasks are completed if there is available time?</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].productivity_rating_3}" step="0.5" class="slider6">
+                                                        <input type="range" min="1" max="5" value="${data[0].productivity_rating_3}" step="0.5" class="slider6" disabled>
                                                         <div class="val6"></div>
                                                     </div>
                                                 </td>
@@ -926,7 +926,7 @@
                                                 <td>Consider how well the employee handles digital distractions (personal phone, internet browsing).</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].productivity_rating_4}" step="0.5" class="slider7">
+                                                        <input type="range" min="1" max="5" value="${data[0].productivity_rating_4}" step="0.5" class="slider7" disabled>
                                                         <div class="val7"></div>
                                                     </div>
                                                 </td>
@@ -944,7 +944,7 @@
                                                 <td class="col-xs-8"><b>Quality work:</b><br><br>Consider if work is thorough, accurate and precise. Consider the extent to which the employee ensures the work is well done.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].qualitywork_rating_1}" step="0.5" class="slider8">
+                                                        <input type="range" min="1" max="5" value="${data[0].qualitywork_rating_1}" step="0.5" class="slider8" disabled>
                                                         <div class="val8"></div>
                                                     </div>
                                                 </td>
@@ -962,7 +962,7 @@
                                                 <td class="col-xs-8"><b>Team player:</b><br><br>Consider the ability and willingness to cooperate and be helpful with other employees.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].teamplayer_rating_1}" step="0.5" class="slider9">
+                                                        <input type="range" min="1" max="5" value="${data[0].teamplayer_rating_1}" step="0.5" class="slider9" disabled>
                                                         <div class="val9"></div>
                                                     </div>
                                                 </td>
@@ -971,7 +971,7 @@
                                                 <td>Consider how well the employee builds a good and beneficial rapport with fellow team members.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].teamplayer_rating_2}" step="0.5" class="slider10">
+                                                        <input type="range" min="1" max="5" value="${data[0].teamplayer_rating_2}" step="0.5" class="slider10" disabled>
                                                         <div class="val10"></div>
                                                     </div>
                                                 </td>
@@ -980,7 +980,7 @@
                                                 <td>Consider how well the employee cooperates with employees from other branches.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].teamplayer_rating_3}" step="0.5" class="slider11">
+                                                        <input type="range" min="1" max="5" value="${data[0].teamplayer_rating_3}" step="0.5" class="slider11" disabled>
                                                         <div class="val11"></div>
                                                     </div>
                                                 </td>
@@ -989,7 +989,7 @@
                                                 <td>Consider if the employee values team success over individual success.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].teamplayer_rating_4}" step="0.5" class="slider12">
+                                                        <input type="range" min="1" max="5" value="${data[0].teamplayer_rating_4}" step="0.5" class="slider12" disabled>
                                                         <div class="val12"></div>
                                                     </div>
                                                 </td>
@@ -1007,7 +1007,7 @@
                                                 <td class="col-xs-8"><b>Communication:</b><br><br>Consider how effectively the employee communicates with supervisor, co-workers, and customers.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].communication_rating_1}" step="0.5" class="slider13">
+                                                        <input type="range" min="1" max="5" value="${data[0].communication_rating_1}" step="0.5" class="slider13" disabled>
                                                         <div class="val13"></div>
                                                     </div>
                                                 </td>
@@ -1016,7 +1016,7 @@
                                                 <td>Consider how well the employee communicates with co-workers when dealing with a difficult situation. Ability to communicate in a non-blaming manner.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].communication_rating_2}" step="0.5" class="slider14">
+                                                        <input type="range" min="1" max="5" value="${data[0].communication_rating_2}" step="0.5" class="slider14" disabled>
                                                         <div class="val14"></div>
                                                     </div>
                                                 </td>
@@ -1034,7 +1034,7 @@
                                                 <td class="col-xs-8"><b>People/Human Relations:</b><br><br>Consider the ability of the employee to call the attention to a co-worker's mistake in a way that makes co-worker willing to cooperate. Consider how well the employee offers constructive criticism.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].peoplerelations_rating_1}" step="0.5" class="slider15">
+                                                        <input type="range" min="1" max="5" value="${data[0].peoplerelations_rating_1}" step="0.5" class="slider15" disabled>
                                                         <div class="val15"></div>
                                                     </div>
                                                 </td>
@@ -1043,7 +1043,7 @@
                                                 <td>Consider how well the employee accepts criticism. Is the employee willing to make corrections?</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].peoplerelations_rating_2}" step="0.5" class="slider16">
+                                                        <input type="range" min="1" max="5" value="${data[0].peoplerelations_rating_2}" step="0.5" class="slider16" disabled>
                                                         <div class="val16"></div>
                                                     </div>
                                                 </td>
@@ -1052,7 +1052,7 @@
                                                 <td>Consider the ability and willingness of the employee to ensure that customers' requests are fully satisfied. Follow up if neccessary.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].peoplerelations_rating_3}" step="0.5" class="slider17">
+                                                        <input type="range" min="1" max="5" value="${data[0].peoplerelations_rating_3}" step="0.5" class="slider17" disabled>
                                                         <div class="val17"></div>
                                                     </div>
                                                 </td>
@@ -1070,7 +1070,7 @@
                                                 <td class="col-xs-8"><b>Ability to take Ownership:</b><br><br>Consider the ability of the employee to take ownership of assigned tasks and figure how to get things done. How well the employee accepts responsibility?</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].ownership_rating_1}" step="0.5" class="slider18">
+                                                        <input type="range" min="1" max="5" value="${data[0].ownership_rating_1}" step="0.5" class="slider18" disabled>
                                                         <div class="val18"></div>
                                                     </div>
                                                 </td>
@@ -1079,7 +1079,7 @@
                                                 <td>Consider the ability of the employee to recognize and admit mistakes and take action to correct it.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].ownership_rating_2}" step="0.5" class="slider19">
+                                                        <input type="range" min="1" max="5" value="${data[0].ownership_rating_2}" step="0.5" class="slider19" disabled>
                                                         <div class="val19"></div>
                                                     </div>
                                                 </td>
@@ -1097,7 +1097,7 @@
                                                 <td class="col-xs-8"><b>Job Attitude:</b><br><br>Consider if employee sustains motivation to do the best job possible?</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].jobattitude_rating_1}" step="0.5" class="slider20">
+                                                        <input type="range" min="1" max="5" value="${data[0].jobattitude_rating_1}" step="0.5" class="slider20" disabled>
                                                         <div class="val20"></div>
                                                     </div>
                                                 </td>
@@ -1115,7 +1115,7 @@
                                                 <td class="col-xs-8"><b>Consistent Impovement:</b><br><br>Does employee take initiative to learn? Consider the desire of the employee to become better.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].improvement_rating_1}" step="0.5" class="slider21">
+                                                        <input type="range" min="1" max="5" value="${data[0].improvement_rating_1}" step="0.5" class="slider21" disabled>
                                                         <div class="val21"></div>
                                                     </div>
                                                 </td>
@@ -1133,7 +1133,7 @@
                                                 <td class="col-xs-8"><b>Safety:</b><br><br>Consider how well employee follows safety practices to avoid accidents and damage to company property. Does employee reports damage to company proporty?</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].safety_rating_1}" step="0.5" class="slider22">
+                                                        <input type="range" min="1" max="5" value="${data[0].safety_rating_1}" step="0.5" class="slider22" disabled>
                                                         <div class="val22"></div>
                                                     </div>
                                                 </td>
@@ -1152,7 +1152,7 @@
                                                 <td class="col-xs-8"><b>Organize:</b><br><br>Consider how well the employee organizes work in the department to ensure efficient operation.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].organize_rating_1}" step="0.5" class="slider23">
+                                                        <input type="range" min="1" max="5" value="${data[0].organize_rating_1}" step="0.5" class="slider23" disabled>
                                                         <div class="val23"></div>
                                                     </div>
                                                 </td>
@@ -1161,7 +1161,7 @@
                                                 <td>Consider how well the employee gives clear direction in assigning tasks to ensure understanding of purpose, expected results and the timing of the tasks.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].organize_rating_2}" step="0.5" class="slider24">
+                                                        <input type="range" min="1" max="5" value="${data[0].organize_rating_2}" step="0.5" class="slider24" disabled>
                                                         <div class="val24"></div>
                                                     </div>
                                                 </td>
@@ -1170,7 +1170,7 @@
                                                 <td>Consider how well employee ensures the adherence of company's policies and procedure by his direct reports.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].organize_rating_3}" step="0.5" class="slider25">
+                                                        <input type="range" min="1" max="5" value="${data[0].organize_rating_3}" step="0.5" class="slider25" disabled>
                                                         <div class="val25"></div>
                                                     </div>
                                                 </td>
@@ -1179,7 +1179,7 @@
                                                 <td><b>Work Ethics:</b><br><br>Consider how well the employee leads by example.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].workethics_rating_1}" step="0.5" class="slider26">
+                                                        <input type="range" min="1" max="5" value="${data[0].workethics_rating_1}" step="0.5" class="slider26" disabled>
                                                         <div class="val26"></div>
                                                     </div>
                                                 </td>
@@ -1188,7 +1188,7 @@
                                                 <td><b>Communication:</b><br><br>Consider how well the employee delivers spoken and written communications. When and how to pass information?</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].leadership_communication_rating_1}" step="0.5" class="slider27">
+                                                        <input type="range" min="1" max="5" value="${data[0].leadership_communication_rating_1}" step="0.5" class="slider27" disabled>
                                                         <div class="val27"></div>
                                                     </div>
                                                 </td>
@@ -1197,7 +1197,7 @@
                                                 <td><b>Personal Development:</b><br><br>Consider how well the employee demonstrates mature judgment in addressing unacceptable behavior or performance.</td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].personaldev_rating_1}" step="0.5" class="slider28">
+                                                        <input type="range" min="1" max="5" value="${data[0].personaldev_rating_1}" step="0.5" class="slider28" disabled>
                                                         <div class="val28"></div>
                                                     </div>
                                                 </td>
@@ -1206,7 +1206,7 @@
                                                 <td>Consider how well the employee provides honest feedback and recognition to his/her direct reports.</td>
                                                 <td>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].personaldev_rating_2}" step="0.5" class="slider29">
+                                                        <input type="range" min="1" max="5" value="${data[0].personaldev_rating_2}" step="0.5" class="slider29" disabled>
                                                         <div class="val29"></div>
                                                     </div>
                                                 </td>
@@ -1224,7 +1224,7 @@
                                                 <td class="col-xs-8"><b>Overall Performance:</b></td>
                                                 <td><br><br>
                                                     <div class="slidecontainer">
-                                                        <input type="range" min="1" max="5" value="${data[0].overall_rating}" step="0.5" class="slider30">
+                                                        <input type="range" min="1" max="5" value="${data[0].overall_rating}" step="0.5" class="slider30" disabled>
                                                         <div class="val30"></div>
                                                     </div>
                                                 </td>

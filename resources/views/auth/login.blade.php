@@ -42,7 +42,7 @@
 
                     <button class="mt-2 form-control btn btn-success btn-lg">Login</button>
                 </form>
-                <!-- <div class="small mt-2"><a href="{{ url('/register') }}">Don't have an account?</a></div> -->
+                <div class="small mt-2"><a href="{{ url('/register') }}">Don't have an account?</a></div>
             </div>
         </div>
     </div>

@@ -196,7 +196,7 @@ class AppraisalCtrl extends Controller
         $appData = DB::select("
             SELECT * 
             FROM public.employees 
-            WHERE department = 'HQ'
+            WHERE department = department
             AND (
                 (
                 EXTRACT(MONTH FROM employment_date) = EXTRACT(MONTH FROM CURRENT_DATE)
@@ -247,7 +247,7 @@ class AppraisalCtrl extends Controller
                         )
                     )
                 )
-            ORDER BY a.id ASC
+            ORDER BY a.id DESC
         ", $arg);
         return json_encode($appData);
     }

@@ -20,6 +20,9 @@ Route::post('getAll-employee-data', [AppraisalCtrl::class, 'getAllEmployeeData']
 Route::post('get-employee-data', [AppraisalCtrl::class, 'getEmployeeData']);
 Route::post('get-supervisor-data', [AppraisalCtrl::class, 'getSupervisorData']);
 Route::post('send-app-email', [AppraisalCtrl::class, 'sendAppEmail']);
+Route::post('add-employee', [AppraisalCtrl::class, 'addEmployee']);
+Route::post('edit-employee', [AppraisalCtrl::class, 'editEmployee']);
+Route::post('getAll-employees', [AppraisalCtrl::class, 'getAllEmployees']);
 
 
 Route::middleware('auth')->group(function(){
@@ -37,6 +40,12 @@ Route::middleware('auth')->group(function(){
                 abort(403);
             }
             return view('history');
+        });
+        Route::get('/editEmployees', function () {
+            if (auth()->user()->username !== 'admin') {
+                abort(403);
+            }
+            return view('editEmployees');
         });
         // Route::view('/admin', 'admin');
         Route::get('/admin', function () {

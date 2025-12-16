@@ -117,7 +117,7 @@
             <tr>
                 <th class="text-center">Appraisal Date</th>
                 <th class="text-center">Employee</th>
-                <th class="text-center">Date Employed</th>
+                <th class="text-center">Branch</th>
                 <th class="text-center">Supervisor</th>
                 <th class="text-center"></th>
             </tr>
@@ -209,7 +209,7 @@
                             <tr> 
                                 <td class="text-start">${val.appraisal_date}</td> 
                                 <td class="text-start">${val.employee}</td> 
-                                <td class="text-start">${val.employment_date}</td> 
+                                <td class="text-start">${val.department}</td> 
                                 <td class="text-start">${val.supervisor}</td> 
                                 <td class="text-start"><button class='btn btn-success view-btn' id='${val.id}'><i class="ri-eye-fill me-2"></i>View</button> <button class='ms-2 btn btn-warning edit-btn' id='${val.id}'><i class="ri-edit-line me-2"></i>Edit</button></td> 
                             </tr> 

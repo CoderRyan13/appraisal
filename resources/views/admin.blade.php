@@ -45,6 +45,8 @@
     <div class="d-flex justify-content-between align-items-center">
         <div class='fw-bold fs-3'><img src="{{url('/')}}/westrac_icon.png" alt="westrac" style="width: 40px;"> Westrac Appraisal Admin</div>
         <div class="d-flex justify-content-center align-items-center">
+            <button class="btn btn-warning me-2 add-emp"><i class="ri-add-fill me-2"></i>Add Employee</button>
+            <a href="{{url('/')}}/appraisal/editEmployees" target="_blank"><button class="btn btn-info me-2"><i class="ri-edit-line me-2"></i>Edit Employees</button></a>
             <a href="{{url('/')}}/appraisal/history" target="_blank"><button class="btn btn-primary me-2"><i class="ri-history-line me-2"></i>History</button></a>
             <form action="{{ url('/logout') }}" method="post" role="form">
                 @csrf
@@ -207,6 +209,105 @@
                             
                         }
                     });
+                }
+            });
+        })
+        .on('click', '.add-emp', function(e) {
+            $('.open-modal').trigger('click');
+            $('.modal-title').html(`Add Employee`);
+            $('.modal-body').html(`
+                <div class="">
+                    <div class="row mb-2">
+                        <div class="col-xl-4">
+                            <label>Employee Name: </label>
+                            <input class="form-control" type='text' id='employee' name='employee'/>
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Employee Number: </label>
+                            <input class="form-control" type='text' id='employeeNumber' name='employeeNumber'/>
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Supervisor: </label>
+                            <input class="form-control" type='text' id='supervisor' name='supervisor'/>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-xl-4">
+                            <label>Employment Date: </label>
+                            <input class="form-control" type='date' id='employmentDate' name='employmentDate'/>
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Job Title: </label>
+                            <input class="form-control" type='text' id='jobTitle' name='jobTitle'/>
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Department: </label>
+                            <select id="department" class="form-control department">
+                                <option value="HQ">HQ</option>
+                                <option value="SPL">SPL</option>
+                                <option value="BMP">BMP</option>
+                                <option value="BZE">BZE</option>
+                                <option value="JD SRVC">JD SRVC</option>
+                                <option value="MDW">MDW</option>
+                                <option value="OW">OW</option>
+                                <option value="SPL T-A">SPL T-A</option>
+                                <option value="BZE T-A">BZE T-A</option>
+                                <option value="DGA">DGA</option>
+                                <option value="PG">PG</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-xl-4">
+                            <label>Supervisor Email: </label>
+                            <input class="form-control" type='text' id='supervisorEmail' name='supervisorEmail'/>
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Is a Supervisor? </label>
+                            <select class="form-control is-sup"><option value="false">No</option><option value="true">Yes</option></select>
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Is a Manager? </label>
+                            <select class="form-control is-manager"><option value="false">No</option><option value="true">Yes</option></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-end mt-3">
+                    <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary add-employee">Add</button>
+                </div>
+            `);
+            // $('.add-attachment').prop({name: name});
+        })
+        .on('click', '.add-employee', function(e) {
+            $.ajax({
+                url: "{{url ('/')}}/add-employee",
+                headers: {'X-CSRF-TOKEN':$ ('meta[name="csrf-token"]').attr ('content')},
+                type: "POST",
+                data: {
+                    "employee"          : $('#employee').val(),
+                    "employee-number"   : $('#employeeNumber').val(),
+                    "supervisor"        : $('#supervisor').val(),
+                    "employment-date"   : $('#employmentDate').val(),
+                    "job-title"         : $('#jobTitle').val(),
+                    "department"        : $('#department').val(),
+                    "supervisor-email"  : $('#supervisorEmail').val(),
+                    "is-sup"            : $('.is-sup').val(),
+                    "is-manager"        : $('.is-manager').val(),
+                },
+                dataType: "json",
+                error(xhr,status,error) {
+                        console.log("Enter employee error: ",xhr.responseText);
+                    },
+                success: function(data, status){
+                    if(data.trim() == 'y') {
+                        display_alert ('Add Employee', 'Employee was added succesfully.', 1);
+                        setTimeout("location.reload();", 1500);
+                    } else {
+                        display_alert ('Add Employee', 'Something went wrong when adding employee, try again.', 0);
+                        setTimeout("location.reload();", 1500);
+                    }
+                    
                 }
             });
         })

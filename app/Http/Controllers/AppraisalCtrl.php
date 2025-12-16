@@ -179,7 +179,7 @@ class AppraisalCtrl extends Controller
     }
 
     public function getAllAppraisalData(Request $request) {
-        $appData = DB::select("SELECT * FROM public.appraisal ORDER BY id DESC");
+        $appData = DB::select("SELECT e.department, a.* FROM public.appraisal a JOIN public.employees e ON a.employee = e.employee ORDER BY id DESC");
         return json_encode($appData);
     }
 
@@ -196,7 +196,7 @@ class AppraisalCtrl extends Controller
         $appData = DB::select("
             SELECT * 
             FROM public.employees 
-            WHERE department = department
+            WHERE is_active = true
             AND (
                 (
                 EXTRACT(MONTH FROM employment_date) = EXTRACT(MONTH FROM CURRENT_DATE)
@@ -217,7 +217,7 @@ class AppraisalCtrl extends Controller
             'id' => trim($request->id)
         ];
 
-        $appData = DB::select("SELECT * FROM public.employees WHERE id = :id ORDER BY id ASC", $arg);
+        $appData = DB::select("SELECT * FROM public.employees WHERE id = :id AND is_active = true ORDER BY id ASC", $arg);
         return json_encode($appData);
     }
 
@@ -227,7 +227,7 @@ class AppraisalCtrl extends Controller
         ];
 
         $appData = DB::select("
-            SELECT a.*
+            SELECT e.department, a.*
             FROM public.appraisal a
             JOIN public.employees e ON a.employee = e.employee
             WHERE  
@@ -266,5 +266,48 @@ class AppraisalCtrl extends Controller
         });
 
         return json_encode('y');
+    }
+
+    public function addEmployee(Request $request) {
+        $fields = [
+            'employee'                 => $request -> input("employee"),
+            'employee_number'          => $request -> input("employee-number"),
+            'supervisor'               => $request -> input("supervisor"),
+            'employment_date'          => $request -> input("employment-date"),
+            'job_title'                => $request -> input("job-title"),
+            'department'               => $request -> input("department"),
+            'supervisor_email'         => $request -> input("supervisor-email"),
+            'is_sup'                   => $request -> input("is-sup"),
+            'is_manager'               => $request -> input("is-manager"),
+        ];
+        
+        if(DB::table('public.employees')->insert($fields)) {
+            return json_encode('y');
+        } else { return json_encode('n'); };
+    }
+
+    public function editEmployee(Request $request) {
+        $id = $request -> input("id");
+        $fields = [
+            'employee'                 => $request -> input("employee"),
+            'employee_number'          => $request -> input("employee-number"),
+            'supervisor'               => $request -> input("supervisor"),
+            'employment_date'          => $request -> input("employment-date"),
+            'job_title'                => $request -> input("job-title"),
+            'department'               => $request -> input("department"),
+            'supervisor_email'         => $request -> input("supervisor-email"),
+            'is_sup'                   => $request -> input("is-sup"),
+            'is_manager'               => $request -> input("is-manager"),
+            'is_active'                => $request -> input("is-active"),
+        ];
+        
+        if(DB::table('public.employees')->where('id', $id)->update($fields)) {
+            return json_encode('y');
+        } else { return json_encode('n'); };
+    }
+
+    public function getAllEmployees(Request $request) {
+        $appData = DB::select("SELECT * FROM public.employees WHERE is_active = true ORDER BY employee ASC");
+        return json_encode($appData);
     }
 }

@@ -24,7 +24,7 @@
 
                     <div class="mt-2">
                         <label for="password">Password</label>  
-                        <a href="{{ route('password.request') }}" class="float-end text-success">Forget password?</a>
+                        <a href="{{ route('password.request') }}" class="float-end text-success">Change/Forget password?</a>
                         <input type="password" class="mt-1 form-control @error('password') border border-danger @enderror" placeholder="Password" name="password" />
                         @error('password')
                             <div class="small text-danger">{{ $message }}</div>
@@ -42,7 +42,7 @@
 
                     <button class="mt-2 form-control btn btn-success btn-lg">Login</button>
                 </form>
-                <div class="small mt-2"><a href="{{ url('/register') }}">Don't have an account?</a></div>
+                <!-- <div class="small mt-2"><a href="{{ url('/register') }}">Don't have an account?</a></div> -->
             </div>
         </div>
     </div>

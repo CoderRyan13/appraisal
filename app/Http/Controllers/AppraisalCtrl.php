@@ -179,7 +179,7 @@ class AppraisalCtrl extends Controller
     }
 
     public function getAllAppraisalData(Request $request) {
-        $appData = DB::select("SELECT e.department, a.* FROM public.appraisal a JOIN public.employees e ON a.employee = e.employee ORDER BY id DESC");
+        $appData = DB::select("SELECT e.department, a.* FROM public.appraisal a JOIN public.employees e ON a.employee = e.employee WHERE (EXTRACT(YEAR FROM a.appraisal_date) = EXTRACT(YEAR FROM CURRENT_DATE)) ORDER BY a.id DESC");
         return json_encode($appData);
     }
 

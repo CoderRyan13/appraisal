@@ -24,6 +24,10 @@
 
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
 
+    <script src="https://cdn.datatables.net/rowgroup/1.6.0/js/dataTables.rowGroup.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowgroup/1.6.0/css/rowGroup.dataTables.min.css">
+
+
     <style>
         .form-container {
             margin-left: 40px;
@@ -114,6 +118,7 @@
     <table class="table table-striped table-hover app-table">
         <thead>
             <tr>
+                <th class="text-center">Month</th> {{-- hidden --}}
                 <th class="text-center">Appraisal Date</th>
                 <th class="text-center">Employee</th>
                 <th class="text-center">Branch</th>
@@ -200,6 +205,7 @@
                     $.each(data, function(key, val) {
                         finalHTML += ` 
                             <tr> 
+                                <td class="text-start">${new Date(val.appraisal_date).toLocaleString('default', { year: 'numeric', month: 'long' })}</td> 
                                 <td class="text-start">${val.appraisal_date}</td> 
                                 <td class="text-start">${val.employee}</td> 
                                 <td class="text-start">${val.department}</td> 
@@ -211,7 +217,13 @@
 
                     $(".tbl-body").append(finalHTML);
                     $('.app-table').DataTable({ 
-                        order: [],
+                        order: [[0, 'asc']],   // sort by Month column
+                        columnDefs: [
+                            { targets: 0, visible: false } // hide Month column
+                        ],
+                        rowGroup: {
+                            dataSrc: 0 // group by Month column
+                        }
                     });
 				},
 				error		: function (request, status, error) {

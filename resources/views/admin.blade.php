@@ -228,7 +228,67 @@
                         </div>
                         <div class="col-xl-4">
                             <label>Supervisor: </label>
-                            <input class="form-control" type='text' id='supervisor' name='supervisor'/>
+                            <select class="form-control" id='supervisor'>
+                                <option value="">-</option>
+                                <option data-dept="HQ" data-email="albertpenner@westracbelize.com" value="Albert Penner">Albert Penner</option>
+                                <option data-dept="HQ" data-email="allanreimer@westracbelize.com" value="Allan Reimer">Allan Reimer</option>
+                                <option data-dept="HQ" data-email="andymolina@westracbelize.com" value="Andy Molina">Andy Molina</option>
+                                <option data-dept="HQ" data-email="conroypenner@westracbelize.com" value="Conroy Penner">Conroy Penner</option>
+                                <option data-dept="HQ" data-email="dannyku@westracbelize.com" value="Danny Ku">Danny Ku</option>
+                                <option data-dept="HQ" data-email="dianacastillo@westracbelize.com" value="Diana Castillo">Diana Castillo</option>
+                                <option data-dept="HQ" data-email="glenkornelsen@westracbelize.com" value="Glen Kornelsen">Glen Kornelsen</option>
+                                <option data-dept="HQ" data-email="henrywiebe@westracbelize.com" value="Heinrich Wiebe">Heinrich Wiebe</option>
+                                <option data-dept="HQ" data-email="jacobpenner@westracbelize.com" value="Jacob Penner">Jacob Penner</option>
+                                <option data-dept="HQ" data-email="jakewolfe@westracbelize.com" value="Jake Wolfe">Jake Wolfe</option>
+                                <option data-dept="HQ" data-email="lisbethpena@westracbelize.com" value="Lisbeth Pena">Lisbeth Pena</option>
+                                <option data-dept="HQ" data-email="milliepulido@westracbelize.com" value="Millie Pulido">Millie Pulido</option>
+                                <option data-dept="HQ" data-email="johnnypetkau@westracbelize.com" value="Johan petkau">Johan petkau</option>
+                                <option data-dept="HQ" data-email="erwinthiessen@westracbelize.com" value="Erwin Thiessen">Erwin Thiessen</option>
+                                <option data-dept="HQ" data-email="peterthiessen@westracbelize.com" value="Peter Thiessen">Peter Thiessen</option>
+                                <option data-dept="HQ" data-email="rainiercorrea@westracbelize.com" value="Rainier Correa">Rainier Correa</option>
+                                <option data-dept="HQ" data-email="wendygregorio@westracbelize.com" value="Wendy Gregorio Reyes">Wendy Gregorio Reyes</option>
+                                <option data-dept="SPL" data-email="anthonyjimenez@westracbelize.com" value="Anthony Jimenez">Anthony Jimenez</option>
+                                <option data-dept="SPL" data-email="gerardorempel@westracbelize.com" value="Gerardo Rempel">Gerardo Rempel</option>
+                                <option data-dept="SPL" data-email="hughdelleysaguirre@westracbelize.com" value="Hughdelle Ysaguirre">Hughdelle Ysaguirre</option>
+                                <option data-dept="SPL" data-email="jacobwiebe@westracbelize.com" value="Jacob Wiebe">Jacob Wiebe</option>
+                                <option data-dept="SPL" data-email="walterthiessen@westracbelize.com" value="Walter Thiessen">Walter Thiessen</option>
+                                <option data-dept="SPL" data-email="sandrahernandez@westracbelize.com" value="Sandra Romero">Sandra Romero</option>
+                                <option data-dept="BMP" data-email="agnesitza@westracbelize.com" value="Agnes Itza Gongora">Agnes Itza Gongora</option>
+                                <option data-dept="BMP" data-email="eliaschoc@westracbelize.com" value="Elias Choc">Elias Choc</option>
+                                <option data-dept="BMP" data-email="esvinbautista@westracbelize.com" value="Esvin Bautista">Esvin Bautista</option>
+                                <option data-dept="BMP" data-email="ingmarerazo@westracbelize.com" value="Ingmar Erazo">Ingmar Erazo</option>
+                                <option data-dept="BMP" data-email="kcdunn@westracbelize.com" value="Kenneth Dunn">Kenneth Dunn</option>
+                                <option data-dept="BZE" data-email="cristinarios@westracbelize.com" value="Cristina Rios">Cristina Rios</option>
+                                <option data-dept="BZE" data-email="elisamatzib@westracbelize.com" value="Elisama Tzib">Elisama Tzib</option>
+                                <option data-dept="BZE" data-email="josehamilton@westracbelize.com" value="Jose Hamilton">Jose Hamilton</option>
+                                <option data-dept="BZE" data-email="rolandocamal@westracbelize.com" value="Rolando Camal">Rolando Camal</option>
+                                <option data-dept="BZE" data-email="davidbueckert@westracbelize.com" value="David Bueckert">David Bueckert</option>
+                                <option data-dept="JD SRVC" data-email="bernhardpenner@westracbelize.com" value="Bernhard Penner">Bernhard Penner</option>
+                                <option data-dept="JD SRVC" data-email="jessicamontepeque@westracbelize.com" value="Jessica Montepeque">Jessica Montepeque</option>
+                                <option data-dept="JD SRVC" data-email="trevorthiessen@westracbelize.com" value="Trevor Thiessen">Trevor Thiessen</option>
+                                <option data-dept="MDW" data-email="arlinbautista@westracbelize.com" value="Arlin Bautista Sarceno">Arlin Bautista Sarceno</option>
+                                <option data-dept="MDW" data-email="hugosalazar@westracbelize.com" value="Hugo Salazar Jr.">Hugo Salazar Jr.</option>
+                                <option data-dept="MDW" data-email="darsonpenner@westracbelize.com" value="Darson Penner">Darson Penner</option>
+                                <option data-dept="MDW" data-email="orlandowolfe@westracbelize.com" value="Orlando Wolfe">Orlando Wolfe</option>
+                                <option data-dept="MDW" data-email="rigziportillo@westracbelize.com" value="Rigzi Portillo">Rigzi Portillo</option>
+                                <option data-dept="MDW" data-email="ronaldvillas@westracbelize.com" value="Ronald Villas">Ronald Villas</option>
+                                <option data-dept="MDW" data-email="shennycalderon@westracbelize.com" value="Shenny Calderon">Shenny Calderon</option>
+                                <option data-dept="OW" data-email="abramfriesen@westracbelize.com" value="Abram Friesen">Abram Friesen</option>
+                                <option data-dept="OW" data-email="donnatillett@westracbelize.com" value="Donna Tillett">Donna Tillett</option>
+                                <option data-dept="OW" data-email="enriquetzul@westracbelize.com" value="Enrique Tzul">Enrique Tzul</option>
+                                <option data-dept="OW" data-email="jesseochoa@westracbelize.com" value="Jesse Ochoa">Jesse Ochoa</option>
+                                <option data-dept="OW" data-email="johanpetkau@westracbelize.com" value="Johan Petkau">Johan Petkau</option>
+                                <option data-dept="SPL T-A" data-email="darienarevalo@westracbelize.com" value="Darien Arevalo">Darien Arevalo</option>
+                                <option data-dept="SPL T-A" data-email="hugoescobar@westracbelize.com" value="Hugo Méndez Escobar">Hugo Méndez Escobar</option>
+                                <option data-dept="BZE T-A" data-email="nayeli.bustillos@westracbelize.com" value="Nayeli Bustillos Guemez">Nayeli Bustillos Guemez</option>
+                                <option data-dept="BZE T-A" data-email="normanmunoz@westracbelize.com" value="Norman Munoz">Norman Munoz</option>
+                                <option data-dept="DGA" data-email="cindyvillafranco@westracbelize.com" value="Cindy Villafranco">Cindy Villafranco</option>
+                                <option data-dept="DGA" data-email="jonboehmer@westracbelize.com" value="Jon Boehmer">Jon Boehmer</option>
+                                <option data-dept="DGA" data-email="rudypadilla@westracbelize.com" value="Rudy Padilla">Rudy Padilla</option>
+                                <option data-dept="DGA" data-email="marloncalderon@westracbelize.com" value="Marlon Calderon">Marlon Calderon</option>
+                                <option data-dept="PG" data-email="waynemoore@westracbelize.com" value="Wayne Moore">Wayne Moore</option>
+                                <option data-dept="PG" data-email="aislynnjuarez@westracbelize.com" value="Aislynn Juarez Kus">Aislynn Juarez Kus</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -242,25 +302,13 @@
                         </div>
                         <div class="col-xl-4">
                             <label>Department: </label>
-                            <select id="department" class="form-control department">
-                                <option value="HQ">HQ</option>
-                                <option value="SPL">SPL</option>
-                                <option value="BMP">BMP</option>
-                                <option value="BZE">BZE</option>
-                                <option value="JD SRVC">JD SRVC</option>
-                                <option value="MDW">MDW</option>
-                                <option value="OW">OW</option>
-                                <option value="SPL T-A">SPL T-A</option>
-                                <option value="BZE T-A">BZE T-A</option>
-                                <option value="DGA">DGA</option>
-                                <option value="PG">PG</option>
-                            </select>
+                            <input class="form-control department" type='text' id='department' name='department' readonly/>
                         </div>
                     </div>
                     <div class="row mb-2">
                         <div class="col-xl-4">
                             <label>Supervisor Email: </label>
-                            <input class="form-control" type='text' id='supervisorEmail' name='supervisorEmail'/>
+                            <input class="form-control" type='text' id='supervisorEmail' name='supervisorEmail' readonly/>
                         </div>
                         <div class="col-xl-4">
                             <label>Is a Supervisor? </label>
@@ -277,6 +325,7 @@
                     <button type="button" class="btn btn-primary add-employee">Add</button>
                 </div>
             `);
+            $('#supervisor').select2({dropdownParent: $("#openModal"), width: '100%'});
             // $('.add-attachment').prop({name: name});
         })
         .on('click', '.add-employee', function(e) {
@@ -310,6 +359,10 @@
                     
                 }
             });
+        })
+        .on('change', '#supervisor', function(e) {
+            $('#department').val($('#supervisor option:selected').data('dept'));
+            $('#supervisorEmail').val($('#supervisor option:selected').data('email'));
         })
 </script>
 </html>

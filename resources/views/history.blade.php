@@ -87,6 +87,15 @@
         .slider-container {
             width: 100%;
         }
+        .group-header {
+            background: #f5f5f5;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .group-toggle {
+            user-select: none;
+        }
     </style>
 </head>
 <body class="m-4">
@@ -107,7 +116,9 @@
 
     <div class="d-flex justify-content-between align-items-center">
         <div class='fw-bold fs-3'><img src="{{url('/')}}/westrac_icon.png" alt="westrac" style="width: 40px;"> Westrac Appraisal History</div>
-        <div>
+        <div class="d-flex align-items-center justify-content-between">
+            <button class="btn btn-success me-2" id="expandAll"><i class="ri-expand-up-down-fill me-2"></i>Expand all</button>
+            <button class="btn btn-primary me-2" id="collapseAll"><i class="ri-contract-up-down-fill me-2"></i>Collapse all</button>
             <form action="{{ url('/logout') }}" method="post" role="form">
                 @csrf
                 <button class="btn btn-danger"><i class="ri-logout-box-line me-2"></i>Log out</button>
@@ -115,7 +126,7 @@
         </div>
     </div>
 
-    <table class="table table-striped table-hover app-table">
+    <table class="table table-striped table-hover app-table display">
         <thead>
             <tr>
                 <th class="text-center">Month</th> {{-- hidden --}}
@@ -206,25 +217,103 @@
                         finalHTML += ` 
                             <tr> 
                                 <td class="text-start">${new Date(val.appraisal_date).toLocaleString('default', { year: 'numeric', month: 'long' })}</td> 
-                                <td class="text-start">${val.appraisal_date}</td> 
-                                <td class="text-start">${val.employee}</td> 
-                                <td class="text-start">${val.department}</td> 
-                                <td class="text-start">${val.supervisor}</td> 
-                                <td class="text-start"><button class='btn btn-success view-btn' id='${val.id}'><i class="ri-eye-fill me-2"></i>View</button> <button class='ms-2 btn btn-warning edit-btn' id='${val.id}'><i class="ri-edit-line me-2"></i>Edit</button></td> 
+                                <td class="text-start"><div class="row-wrapper">${val.appraisal_date}</div></td> 
+                                <td class="text-start"><div class="row-wrapper">${val.employee}</div></td> 
+                                <td class="text-start"><div class="row-wrapper">${val.department}</div></td> 
+                                <td class="text-start"><div class="row-wrapper">${val.supervisor}</div></td> 
+                                <td class="text-start"><div class="row-wrapper"><button class='btn btn-success view-btn' id='${val.id}'><i class="ri-eye-fill me-2"></i>View</button> <button class='ms-2 btn btn-warning edit-btn' id='${val.id}'><i class="ri-edit-line me-2"></i>Edit</button></div></td> 
                             </tr> 
                         `; 
                     });
 
                     $(".tbl-body").append(finalHTML);
-                    $('.app-table').DataTable({ 
-                        order: [[0, 'asc']],   // sort by Month column
+                    // $('.app-table').DataTable({ 
+                    //     order: [[0, 'asc']],   // sort by Month column
+                    //     columnDefs: [
+                    //         { targets: 0, visible: false } // hide Month column
+                    //     ],
+                    //     rowGroup: {
+                    //         dataSrc: 0 // group by Month column
+                    //     }
+                    // });
+                    var collapsedGroups = {};
+
+                    var table = $('.app-table').DataTable({
+                        order: [[0, 'asc']],
                         columnDefs: [
-                            { targets: 0, visible: false } // hide Month column
+                            { targets: 0, visible: false }
                         ],
                         rowGroup: {
-                            dataSrc: 0 // group by Month column
+                            dataSrc: 0,
+                            startRender: function (rows, group) {
+
+                                if (collapsedGroups[group] === undefined) {
+                                    collapsedGroups[group] = false;
+                                }
+
+                                rows.nodes().each(function (row) {
+                                    var $row = $(row);
+                                    var $wrapper = $row.find('.row-wrapper');
+
+                                    if (collapsedGroups[group]) {
+                                        $wrapper.hide();
+                                    } else {
+                                        $wrapper.show();
+                                    }
+                                });
+
+                                return $('<tr/>')
+                                    .addClass('group-header')
+                                    .append(`
+                                        <td colspan="${rows.columns()[0].length}">
+                                            <span class="group-toggle" data-group="${group}">
+                                                ${collapsedGroups[group] ? '▶' : '▼'} ${group}
+                                            </span>
+                                        </td>
+                                    `);
+                            }
                         }
                     });
+
+                    // Toggle single group with animation
+                    $('.app-table tbody').on('click', '.group-toggle', function () {
+                        var group = $(this).data('group');
+                        collapsedGroups[group] = !collapsedGroups[group];
+
+                        table.rows().every(function () {
+                            var rowGroup = this.data()[0];
+                            if (rowGroup === group) {
+                                $(this.node()).find('.row-wrapper')
+                                    .stop(true, true)
+                                    .slideToggle(250);
+                            }
+                        });
+
+                        table.draw(false);
+                    });
+
+                    $('#collapseAll').on('click', function () {
+                        table.rows().every(function () {
+                            var group = this.data()[0];
+                            collapsedGroups[group] = true;
+                            $(this.node()).find('.row-wrapper')
+                                .stop(true, true)
+                                .slideUp(250);
+                        });
+                        table.draw(false);
+                    });
+
+                    $('#expandAll').on('click', function () {
+                        table.rows().every(function () {
+                            var group = this.data()[0];
+                            collapsedGroups[group] = false;
+                            $(this.node()).find('.row-wrapper')
+                                .stop(true, true)
+                                .slideDown(250);
+                        });
+                        table.draw(false);
+                    });
+
 				},
 				error		: function (request, status, error) {
 					console.log (request.status, request.responseText);

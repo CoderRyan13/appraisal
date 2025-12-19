@@ -57,6 +57,7 @@
         <thead>
             <tr>
                 <th class="text-center">Employee</th>
+                <th class="text-center">Branch</th>
                 <th class="text-center"></th>
             </tr>
         </thead>
@@ -121,6 +122,7 @@
                         finalHTML += ` 
                             <tr> 
                                 <td class="text-start">${val.employee}</td> 
+                                <td class="text-start">${val.department}</td> 
                                 <td class="text-start"><button class='ms-2 btn btn-warning edit-btn' id='${val.id}'><i class="ri-edit-line me-2"></i>Edit</button></td> 
                             </tr> 
                         `; 
@@ -264,7 +266,7 @@
                         </div>
                         <div class="text-end mt-3">
                             <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary edit-employee">Edit</button>
+                            <button type="button" class="btn btn-primary edit-employee"><i class="ri-edit-2-line me-1"></i>Edit</button>
                         </div>
                     `);
                     document.getElementById("supervisor").value = data[0].supervisor;

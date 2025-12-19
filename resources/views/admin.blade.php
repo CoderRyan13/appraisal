@@ -322,7 +322,7 @@
                 </div>
                 <div class="text-end mt-3">
                     <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary add-employee">Add</button>
+                    <button type="button" class="btn btn-primary add-employee"><i class="ri-add-circle-line me-1"></i>Add</button>
                 </div>
             `);
             $('#supervisor').select2({dropdownParent: $("#openModal"), width: '100%'});

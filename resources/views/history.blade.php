@@ -117,8 +117,7 @@
     <div class="d-flex justify-content-between align-items-center">
         <div class='fw-bold fs-3'><img src="{{url('/')}}/westrac_icon.png" alt="westrac" style="width: 40px;"> Westrac Appraisal History</div>
         <div class="d-flex align-items-center justify-content-between">
-            <button class="btn btn-success me-2" id="expandAll"><i class="ri-expand-up-down-fill me-2"></i>Expand all</button>
-            <button class="btn btn-primary me-2" id="collapseAll"><i class="ri-contract-up-down-fill me-2"></i>Collapse all</button>
+            <button class="btn btn-success me-2" id="toggleAll"><i class="ri-contract-up-down-fill me-2"></i>Collapse all</button>
             <form action="{{ url('/logout') }}" method="post" role="form">
                 @csrf
                 <button class="btn btn-danger"><i class="ri-logout-box-line me-2"></i>Log out</button>
@@ -292,25 +291,23 @@
                         table.draw(false);
                     });
 
-                    $('#collapseAll').on('click', function () {
-                        table.rows().every(function () {
-                            var group = this.data()[0];
-                            collapsedGroups[group] = true;
-                            $(this.node()).find('.row-wrapper')
-                                .stop(true, true)
-                                .slideUp(250);
-                        });
-                        table.draw(false);
-                    });
+                    // Expand and collapse button
+                    let allCollapsed = false;
 
-                    $('#expandAll').on('click', function () {
+                    $('#toggleAll').on('click', function () {
+                        allCollapsed = !allCollapsed;
+
                         table.rows().every(function () {
                             var group = this.data()[0];
-                            collapsedGroups[group] = false;
+                            collapsedGroups[group] = allCollapsed;
+
                             $(this.node()).find('.row-wrapper')
-                                .stop(true, true)
-                                .slideDown(250);
+                                .stop(true, true);
                         });
+
+                        // Optional: change button text
+                        $(this).html(allCollapsed ? '<i class="ri-expand-up-down-fill me-2"></i>Expand All' : '<i class="ri-contract-up-down-fill me-2"></i>Collapse All');
+
                         table.draw(false);
                     });
 
